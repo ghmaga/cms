@@ -38,6 +38,7 @@ return [
     'captcha'               => '验证码',
     'action'                => '操作',
     'title'                 => '标题',
+    'en_title'              => '英文标题',
     'description'           => '简介',
     'back'                  => '返回',
     'back_to_list'          => '返回列表',
@@ -98,4 +99,5 @@ return [
         'filter_placeholder' => '过滤',
     ],
     'menu_titles' => [],
+    'category' => '分类',
 ];

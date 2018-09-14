@@ -38,6 +38,7 @@ return [
     'captcha'               => 'Captcha',
     'action'                => 'Action',
     'title'                 => 'Title',
+    'en_title'              => 'EN_Title',
     'description'           => 'Description',
     'back'                  => 'Back',
     'back_to_list'          => 'Back to List',
@@ -99,4 +100,6 @@ return [
     ],
 
     'menu_titles' => [],
+    'category' => 'Category',
+
 ];
