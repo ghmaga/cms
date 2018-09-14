@@ -37,8 +37,7 @@ return [
     'entries'               => 'entries',
     'captcha'               => 'Captcha',
     'action'                => 'Action',
-    'title'                 => 'Title',
-    'en_title'              => 'EN_Title',
+    'title'                 => 'Title',    
     'description'           => 'Description',
     'back'                  => 'Back',
     'back_to_list'          => 'Back to List',
@@ -100,6 +99,10 @@ return [
     ],
 
     'menu_titles' => [],
-    'category' => 'Category',
+    'category'              => 'Category',
+    'en_title'              => 'EN_Title',
+    'image'                 => 'Image',
+    'en_image'              => 'Image2',
+    'link'                  => 'Link',
 
 ];
