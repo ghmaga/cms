@@ -84,8 +84,9 @@ class SlideController extends Controller
         $grid = new Grid(new Slide);
 
         $grid->id('Id');
-        $grid->parent_id(trans('admin.parent_id'))->editable('select', Category::selectOptions());
-        $grid->image(trans('admin.image'))->image('', 50, 50);
+        // $grid->parent_id(trans('admin.parent_id'))->editable('select', Category::selectOptions());
+        $grid->image(trans('admin.image'))->gallery(['zooming' => true]);
+        // $grid->image(trans('admin.image'))->image('', 50, 50);
         $grid->title(trans('admin.title'))->editable();
         $grid->link(trans('admin.link'))->editable();
         $grid->order(trans('admin.order'))->editable();
@@ -105,7 +106,7 @@ class SlideController extends Controller
 
         $show->id('Id');
         $show->parent_id(trans('admin.parent_id'));
-        $show->image(trans('admin.image'))->image('', 100, 100);
+        $show->image(trans('admin.image'));
         $show->title(trans('admin.title'));
         $show->link(trans('admin.link'));
         $show->order(trans('admin.order'));
@@ -123,7 +124,16 @@ class SlideController extends Controller
         $form = new Form(new Slide);
 
         $form->select('parent_id', trans('admin.parent_id'))->options(Category::selectOptions());
-        $form->image('image', trans('admin.image'));
+        $form->image('image', trans('admin.image'))
+             ->fit(300, 200, function ($constraint) {
+                                            //等比缩放
+                                            $constraint->aspectRatio();
+                                            //防止图片放大
+                                            $constraint->upsize();
+                                            })
+             ->rules('required|mimes:jpeg,png,gif')
+             ->uniqueName()
+             ->help('支持jpg,png,gif');
         $form->image('en_image', trans('admin.en_image'));
         $form->text('title', trans('admin.title'));
         $form->text('en_title', trans('admin.en_title'));
